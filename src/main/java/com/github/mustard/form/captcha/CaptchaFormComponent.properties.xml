@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- General -->
+    <entry key="recaptcha.validation.success">Success</entry>
+    <entry key="recaptcha.validation.error">Please confirm you are not a robot</entry>
+</properties>
