@@ -8,5 +8,6 @@ Common Wicket Components
 A simple form component that adds and validates the google [reCAPTCHA](https://www.google.com/recaptcha/intro/index.html)
 
 ```
-// TODO example
+Form form = new Form();
+form.add(new CaptchaFormComponent("captcha");
 ```
