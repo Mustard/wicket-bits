@@ -22,6 +22,7 @@ import static org.apache.http.client.fluent.Request.Post;
 public class CaptchaFormComponent extends FormComponent<String> {
 
     private static final Logger LOG = LoggerFactory.getLogger(CaptchaFormComponent.class);
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     private final String siteKey;
     private final String secretKey;
@@ -92,7 +93,7 @@ public class CaptchaFormComponent extends FormComponent<String> {
                             .add("remoteip", remoteAddress).build()
                     ).execute().returnContent();
 
-            JsonNode json = new ObjectMapper().readTree(content.asStream());
+            JsonNode json = OBJECT_MAPPER.readTree(content.asStream());
             LOG.info("ReCaptcha Response '{}'", json);
             return json.get("success").asBoolean();
         } catch (IOException e) {
