@@ -7,7 +7,23 @@ Common Wicket Components
 
 A simple form component that adds and validates the google [reCAPTCHA](https://www.google.com/recaptcha/intro/index.html)
 
+```html
+<div wicket:id="captcha"></div>
+```
+
 ```java
-Form form = new Form();
 form.add(new CaptchaFormComponent("captcha");
+```
+
+
+## Stripe
+
+### Credit Card Input
+
+```html
+<div wicket:id="stripe-cc"></div>
+```
+
+```java
+form.add(new StripeCreditCardField("stripe-cc"));
 ```

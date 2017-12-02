@@ -1,2 +1,4 @@
 rootProject.name = 'wicket-bits'
 
+include 'captcha'
+include 'stripe'

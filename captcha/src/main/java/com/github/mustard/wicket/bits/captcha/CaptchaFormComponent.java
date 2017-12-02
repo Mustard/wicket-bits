@@ -1,4 +1,4 @@
-package com.github.mustard.form.captcha;
+package com.github.mustard.wicket.bits.captcha;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
