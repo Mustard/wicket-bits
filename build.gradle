@@ -1,11 +1,10 @@
-
 plugins {
     id 'java'
     id 'maven'
     id 'com.github.ben-manes.versions' version '0.17.0'
 }
 
-group 'com.github.mustard'
+group 'com.github.mustard.wicketbits'
 version '1.0-SNAPSHOT'
 
 allprojects {
@@ -30,13 +29,45 @@ subprojects {
     }
 
     apply plugin: 'java'
-    apply plugin: 'maven'
 
     dependencies {
         compile group: 'org.apache.wicket', name: 'wicket-core', version: "$wicketVersion"
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
 
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+    }
+
+}
+
+
+configure([
+        project(':captcha'),
+        project(':stripe')
+]) {
+
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    publishing {
+        repositories {
+            mavenLocal()
+        }
+        publications {
+            mavenJava(MavenPublication) {
+                groupId "${rootProject.group}"
+//                artifactId "${project.name}"
+//                artifactId "com.github.mustard.wicketbits"
+                version "${rootProject.version}"
+                from components.java
+
+                artifact sourceJar {
+                    classifier "sources"
+                }
+            }
+        }
+    }
 }
 
 
