@@ -28,7 +28,7 @@ public class CaptchaFormComponent extends FormComponent<String> {
     private final String secretKey;
 
     public CaptchaFormComponent(String id, String siteKey, String secretKey) {
-        super(id, new Model<String>());
+        super(id, new Model<>());
         this.siteKey = siteKey;
         this.secretKey = secretKey;
         // TODO Doesn't work adding the validator here, have to override validate on the component. investigate?
