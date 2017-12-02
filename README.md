@@ -15,6 +15,8 @@ A simple form component that adds and validates the google [reCAPTCHA](https://w
 form.add(new CaptchaFormComponent("captcha");
 ```
 
+![reCAPTCHA Form Component](assets/captcha.png)
+
 
 ## Stripe
 
