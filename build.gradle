@@ -37,6 +37,15 @@ subprojects {
 
     task sourceJar(type: Jar) {
         from sourceSets.main.allJava
+        from (sourceSets.main.allSource) {
+            include '**/*properties.xml'
+        }
+    }
+
+    jar {
+        from(project.sourceSets.main.allSource) {
+            include '**/*properties.xml'
+        }
     }
 
 }
